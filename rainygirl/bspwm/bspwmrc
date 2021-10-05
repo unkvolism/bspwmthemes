@@ -1,0 +1,46 @@
+#! /bin/sh
+
+pgrep -x sxhkd > /dev/null || sxhkd &
+
+# ##############################################################################
+# #                                AUTOSTART APPS                              #
+# ##############################################################################
+xrdb -load ~/.Xresources
+dunst --config $HOME/.config/dunst/dunstrc &
+picom --config $HOME/.config/picom/picom.conf &
+sh ~/.config/polybar/launch.sh
+wal -i /home/sora/Imagens/walls/rainy-days.png
+mpd 
+setxkbmap -model abnt2 -layout br -variant abnt2
+xautolock -detectsleep -time 10 -locker "betterlockscreen -l dim" -notify 30 -notifier "notify-send -u critical -t 30 -- 'LOCKING screen in 30 seconds'" &
+# ##############################################################################
+# #                            GENERAL CONFIGURATION                           #
+# ##############################################################################
+
+bspc monitor -d I II III IV V VI VII VIII
+
+bspc config border_width         1
+bspc config window_gap           5
+
+bspc config top_padding          37
+bspc config bottom_padding       0
+
+bspc config normal_border_color  "#18181B"
+bspc config active_border_color  "#282828"
+bspc config focused_border_color "#A0A0AB"
+
+bspc config split_ratio          0.52
+bspc config borderless_monocle   true
+bspc config gapless_monocle      true
+
+# ##############################################################################
+# #                                 WINDOW RULES                               #
+# ##############################################################################
+
+#bpsc rule -a kitty state=floating
+bpsc rule -a kitty desktop=^1
+bpsc rule -a Google-chrome desktop=^2
+bspc rule -a firefox desktop=^1
+bspc rule -a discord desktop=^4
+bspc rule -a sublime desktop=^3
+bspc rule -a spotify desktop=^6
