@@ -9,6 +9,7 @@ My bspwm awesome themes collection
 + [picom](https://github.com/yshui/picom)
 + [kitty](https://github.com/kovidgoyal/kitty)
 + [rofi](https://github.com/davatorium/rofi)
++ [nerfonts(https://nerdfonts.com/)
 
 # Installation
 ```sh
