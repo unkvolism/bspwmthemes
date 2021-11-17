@@ -15,6 +15,7 @@ My bspwm awesome themes collection
 ```sh
 git clone https://github.com/sorahed/bspwthemes
 cd bspwmthemes/
+choose a theme and copy the archives 😉
 
 ```
 ### Choose a theme, and copy the files to their respective directories
